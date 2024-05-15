@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour, IColection
+public class Character : MonoBehaviour, IInventory
 {
     [SerializeField] float _speed;
 
-    public Base_Inventory _inventoryColection => throw new System.NotImplementedException();
+    public Inventory Inventory => inventoryCharacter;
+    Inventory inventoryCharacter;
     private void Update()
     {
         Movement(_speed);

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IColection
+public interface IInventory
 {
-    Base_Inventory _inventoryColection {get;}
+    Inventory Inventory {get;}
 }

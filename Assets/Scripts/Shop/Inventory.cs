@@ -2,19 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Base_Inventory : MonoBehaviour
+public class Inventory : MonoBehaviour
 {
-    Dictionary<IColection, int> _inventory = new();
+    Dictionary<IInventory, int> _inventory = new();
 
-    public void AddItem(IColection item, int quantity)
+    public void AddItem(IInventory item, int quantity)
     {
-        if (_inventory.ContainsKey(item)) _inventory[item] += quantity;
+        if (_inventory.ContainsKey(item))
+        {
+            _inventory[item] += quantity;
+        }
     }
-    public bool CanRemove(IColection item, int quantity)
+    public bool CanRemove(IInventory item, int quantity)
     {
         return true;
     }
-    public void RemoveItem(IColection item, int quantity)
+    public void RemoveItem(IInventory item, int quantity)
     {
         if (!CanRemove(item, quantity)) return;
         //feedback
@@ -28,7 +31,7 @@ public class Base_Inventory : MonoBehaviour
 
         }
     }
-    public Dictionary<IColection, int> GetInventory()
+    public Dictionary<IInventory, int> GetInventory()
     {
         return _inventory;
     }
