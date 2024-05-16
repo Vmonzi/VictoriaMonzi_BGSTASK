@@ -20,7 +20,6 @@ public class ItemDisplay : MonoBehaviour
 
     public void SetItem(Item_SO item, int quantity)
     {
-        //set item and image in canvas
         itemDataSO = item;
         imgIcon.sprite = item.icon;
     }

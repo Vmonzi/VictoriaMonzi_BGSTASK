@@ -37,7 +37,6 @@ public class ShopPanel : Panel
 
     public void BuyItem(ItemDisplay item)
     {
-        //Function proposed by the purchase in case it is possible
         if (_character == null || _seller == null) return;
 
         int amount = 1; //HARDCODED FOR NOW
@@ -57,7 +56,6 @@ public class ShopPanel : Panel
 
     public void SellItem(ItemDisplay item)
     {
-        //Function proposed by the sale in case it is possible and there is stock
         if (_character == null || _seller == null) return;
 
         int amount = 1; //HARDCODED FOR NOW

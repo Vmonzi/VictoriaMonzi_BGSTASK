@@ -28,6 +28,7 @@ public class InventoryPanel : Panel
     public void EquipItem(ItemDisplay item)
     {
         if (_character == null) return;
+        //TODO implement equip system
 
         Debug.Log("Player equiped: " + item.itemDataSO.objectName);
     }

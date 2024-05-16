@@ -33,7 +33,6 @@ public class NPCSeller : MonoBehaviour, IInventoryOwner
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Ask if the player is in the purchase zone, turn on the interaction widget
         GameManager.Instance.UIManager.InteractionWidget.SetText(_interactionName);
         GameManager.Instance.UIManager.ShowInteractionWidget(true);
         GameManager.Instance.CanShop = true;

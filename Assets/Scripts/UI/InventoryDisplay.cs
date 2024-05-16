@@ -50,8 +50,6 @@ public class InventoryDisplay : MonoBehaviour
 
     private void CreateItem()
     {
-        //Create the item. instantiate it in the place of the prototype
-        //activate its visualization in Show and invoke the item from the button
         var item = Instantiate(_itemPrototype, _itemPrototype.transform.parent);
         item.Show(true, force: true);
         item.itemButton.onClick.AddListener(() => OnItemClicked?.Invoke(item));

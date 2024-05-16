@@ -27,15 +27,14 @@ public class Character : MonoBehaviour, IInventoryOwner
     private void Update()
     {
         Movement(_speed);
-        //pressing the E key and being in the purchasing area we access the shop panel
+
         if (Input.GetKeyDown(KeyCode.E) && GameManager.Instance.CanShop)
             GameManager.Instance.UIManager.ShowShop(!GameManager.Instance.UIManager.ShopPanel.Shown);
-        //pressing the I key we access the inventory panel
+
         if (Input.GetKeyDown(KeyCode.I))
             GameManager.Instance.UIManager.ShowInventory(!GameManager.Instance.UIManager.InventoryPanel.Shown);
     }
 
-    //movement
     public void Movement(float speed)
     {
         float moveX = Input.GetAxis(HORIZONTAL);

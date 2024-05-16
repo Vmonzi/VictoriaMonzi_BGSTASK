@@ -4,7 +4,6 @@ using UnityEngine;
 
 public abstract class Panel : MonoBehaviour
 {
-    //The panel is useful for turning canvas widgets on and off.
     public bool Shown { get; private set; }
 
     protected virtual void Awake()
