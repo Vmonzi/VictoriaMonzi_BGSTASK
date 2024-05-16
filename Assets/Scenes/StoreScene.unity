@@ -2618,19 +2618,19 @@ MonoBehaviour:
   _interactionName: Shop
   _itemsToSell:
   - item: {fileID: 11400000, guid: f8336591b3b03074887aee2af425c965, type: 2}
-    quantity: 5
-  - item: {fileID: 11400000, guid: e5e6af089d40da84cbfc4482b5c342f1, type: 2}
-    quantity: 9
-  - item: {fileID: 11400000, guid: f620f6d5c9af7ac41819d0df490b368f, type: 2}
-    quantity: 4
-  - item: {fileID: 11400000, guid: a0b8bb2152809af418906e6623c8c4c9, type: 2}
-    quantity: 4
-  - item: {fileID: 11400000, guid: 36344aabf5be56e4685211fa55db30d0, type: 2}
     quantity: 2
-  - item: {fileID: 11400000, guid: 7f2ee658e72025746ac91f20b80fd78c, type: 2}
+  - item: {fileID: 11400000, guid: e5e6af089d40da84cbfc4482b5c342f1, type: 2}
     quantity: 3
+  - item: {fileID: 11400000, guid: f620f6d5c9af7ac41819d0df490b368f, type: 2}
+    quantity: 2
+  - item: {fileID: 11400000, guid: a0b8bb2152809af418906e6623c8c4c9, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: 36344aabf5be56e4685211fa55db30d0, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: 7f2ee658e72025746ac91f20b80fd78c, type: 2}
+    quantity: 2
   - item: {fileID: 11400000, guid: 56b4420973e024f49aa7580190540d67, type: 2}
-    quantity: 7
+    quantity: 2
 --- !u!212 &2007352861
 SpriteRenderer:
   m_ObjectHideFlags: 0
