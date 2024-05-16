@@ -6,13 +6,13 @@ using UnityEngine.TextCore.Text;
 
 public class InteractionWidget : Panel
 {
-    [SerializeField] private TMP_Text txtInteraction;
+    [SerializeField] private TMP_Text _txtInteraction;
 
     public override void Refresh() { }
 
     public void SetText(string interaction)
     {
-        txtInteraction.SetText(interaction);
+        _txtInteraction.SetText(interaction);
     }
 }
 

@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class InventoryDisplay : MonoBehaviour
 {
-    [SerializeField] private ItemDisplay itemPrototype;
+    [SerializeField] private ItemDisplay _itemPrototype;
     [SerializeField] private TMP_Text txtMoney;
 
     private List<ItemDisplay> _itemsUi = new();
@@ -16,7 +16,7 @@ public class InventoryDisplay : MonoBehaviour
 
     public void Initialize()
     {
-        itemPrototype.Show(false, force: true);
+        _itemPrototype.Show(false, force: true);
     }
 
     public void SetInventory(Inventory newInventory)
@@ -50,7 +50,7 @@ public class InventoryDisplay : MonoBehaviour
 
     private void CreateItem()
     {
-        var item = Instantiate(itemPrototype, itemPrototype.transform.parent);
+        var item = Instantiate(_itemPrototype, _itemPrototype.transform.parent);
         item.Show(true, force: true);
         item.itemButton.onClick.AddListener(() => OnItemClicked?.Invoke(item));
         _itemsUi.Add(item);

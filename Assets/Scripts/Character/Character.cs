@@ -8,14 +8,14 @@ public class Character : MonoBehaviour, IInventoryOwner
     private const string VERTICAL = "Vertical";
 
     [SerializeField] private float _speed;
-    [SerializeField] private int initialMoney = 50;
+    [SerializeField] private int _initialMoney = 50;
     private Inventory _inventory;
 
     public Inventory Inventory => _inventory;
 
     private void Awake()
     {
-        _inventory = new Inventory(initialMoney);
+        _inventory = new Inventory(_initialMoney);
     }
 
     private void Start()

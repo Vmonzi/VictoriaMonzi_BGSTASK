@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private ShopPanel _shopPanel;
     [SerializeField] private InventoryPanel _inventoryPanel;
     [SerializeField] private InteractionWidget _interactionWidget;
-    private bool wasInteractionShowing;
+    private bool _wasInteractionShowing;
 
     public ShopPanel ShopPanel => _shopPanel;
     public InventoryPanel InventoryPanel => _inventoryPanel;
@@ -18,9 +18,9 @@ public class UIManager : MonoBehaviour
     {
         if (show)
         {
-            wasInteractionShowing = InteractionWidget.Shown;
+            _wasInteractionShowing = InteractionWidget.Shown;
 
-            if (wasInteractionShowing)
+            if (_wasInteractionShowing)
                 ShowInteractionWidget(false);
 
             ShopPanel.Open();
@@ -29,10 +29,10 @@ public class UIManager : MonoBehaviour
         {
             ShopPanel.Close();
 
-            if (wasInteractionShowing)
-                ShowInteractionWidget(wasInteractionShowing);
+            if (_wasInteractionShowing)
+                ShowInteractionWidget(_wasInteractionShowing);
 
-            wasInteractionShowing = InteractionWidget.Shown;
+            _wasInteractionShowing = InteractionWidget.Shown;
         }
     }
 

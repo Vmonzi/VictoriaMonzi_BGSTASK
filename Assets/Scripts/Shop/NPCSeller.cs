@@ -12,28 +12,28 @@ public class NPCSeller : MonoBehaviour, IInventoryOwner
         public int quantity;
     }
 
-    [SerializeField] private string interactionName = "Shop";
-    [SerializeField] private List<ShopItem> itemsToSell;
+    [SerializeField] private string _interactionName = "Shop";
+    [SerializeField] private List<ShopItem> _itemsToSell;
 
-    private Inventory inventory;
+    private Inventory _inventory;
 
-    public Inventory Inventory => inventory;
+    public Inventory Inventory => _inventory;
 
 
     private void Awake()
     {
-        inventory = new();
+        _inventory = new();
 
-        for (int i = 0; i < itemsToSell.Count; i++)
-            inventory.AddItem(itemsToSell[i].item, itemsToSell[i].quantity);
+        for (int i = 0; i < _itemsToSell.Count; i++)
+            _inventory.AddItem(_itemsToSell[i].item, _itemsToSell[i].quantity);
 
         //Clear memory
-        itemsToSell.Clear();
+        _itemsToSell.Clear();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameManager.Instance.UIManager.InteractionWidget.SetText(interactionName);
+        GameManager.Instance.UIManager.InteractionWidget.SetText(_interactionName);
         GameManager.Instance.UIManager.ShowInteractionWidget(true);
         GameManager.Instance.CanShop = true;
         GameManager.Instance.UIManager.ShopPanel.SetSellerInventory(this);
