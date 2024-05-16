@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     public void LeaveGame()
     {
+        //close the game
         Application.Quit();
     }
 }
