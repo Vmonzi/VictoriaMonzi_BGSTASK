@@ -18,5 +18,10 @@ public class GameManager : MonoBehaviour
         if (!Instance) Instance = this;
         else Destroy(Instance);
     }
+
+    public void LeaveGame()
+    {
+        Application.Quit();
+    }
 }
 
