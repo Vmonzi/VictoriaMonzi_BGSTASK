@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class ShopItem : MonoBehaviour
 {
-    public IInventory item;
+    public IInventoryOwner item;
     public int quantityItem;
 }

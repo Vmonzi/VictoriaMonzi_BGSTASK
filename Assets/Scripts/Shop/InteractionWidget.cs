@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
-public class InteractionWidget : MonoBehaviour
+public class InteractionWidget : Panel
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private TMP_Text txtInteraction;
 
-    // Update is called once per frame
-    void Update()
+    public override void Refresh() { }
+
+    public void SetText(string interaction)
     {
-        
+        txtInteraction.SetText(interaction);
     }
 }
+

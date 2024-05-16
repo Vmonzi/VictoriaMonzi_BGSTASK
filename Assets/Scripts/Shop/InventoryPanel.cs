@@ -2,17 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryPanel : MonoBehaviour
+public class InventoryPanel : Panel
 {
-    // Start is called before the first frame update
-    void Start()
+    private IInventoryOwner _character;
+    public InventoryDisplay characterUi;
+
+    protected override void Awake()
     {
-        
+        base.Awake();
+        characterUi.Initialize();
+        characterUi.OnItemClicked += EquipItem;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetCharacterInventory(IInventoryOwner character)
     {
-        
+        _character = character;
+        characterUi.SetInventory(character.Inventory);
+    }
+
+    public override void Refresh()
+    {
+        characterUi.Refresh();
+    }
+
+    public void EquipItem(ItemDisplay item)
+    {
+        if (_character == null) return;
+        //TODO implement equip system
+
+        Debug.Log("Player equiped: " + item.itemDataSO.objectName);
     }
 }
+

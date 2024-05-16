@@ -2,23 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Panel : MonoBehaviour
+public abstract class Panel : MonoBehaviour
 {
     public bool Shown { get; private set; }
 
+    protected virtual void Awake()
+    {
+        Show(false, force: true);
+    }
+
     public void Open()
     {
-        if (Shown) return;
+        Show(true);
     }
 
     public void Close()
     {
-
+        Show(false);
     }
 
-    public void Show(bool visible, bool force = false)
+    private void Show(bool visible, bool force = false)
     {
         if (Shown == visible && !force) return;
         Shown = visible;
+
+        gameObject.SetActive(Shown);
+
+        if (Shown)
+            Refresh();
     }
+
+    public abstract void Refresh();
 }
+
